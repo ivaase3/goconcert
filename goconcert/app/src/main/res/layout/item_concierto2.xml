@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/ivImagen"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@android:drawable/sym_def_app_icon"
+            app:srcCompat="@mipmap/ic_launcher_foreground" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/lbNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nombre "
+            tools:layout_editor_absoluteX="24dp" />
+
+        <TextView
+            android:id="@+id/lbCiudad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ciudad" />
+
+        <TextView
+            android:id="@+id/lbLugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lugar" />
+
+        <TextView
+            android:id="@+id/lbNombreSala"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nombre sala"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/lbPrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="precio€" />
+
+        <TextView
+            android:id="@+id/lbsemana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dia Semana"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="59dp" />
+
+        <TextView
+            android:id="@+id/lbDia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dd/mm/aaaa"
+            tools:layout_editor_absoluteX="119dp"
+            tools:layout_editor_absoluteY="59dp" />
+
+        <TextView
+            android:id="@+id/lbPersonas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="personas" />
+
+    </LinearLayout>
+
+</LinearLayout>
