@@ -25,6 +25,7 @@ import java.util.List;
 
 import adapters.ConciertoAdapter;
 import base.Concierto;
+import base.Festival;
 import base.Usuario;
 import practica.iase.com.funcionaa.R;
 
@@ -169,6 +170,7 @@ public class ConciertoActivity extends Activity  implements View.OnClickListener
 
     public class TareaAsincrona8 extends AsyncTask<Void,Void,Void> {
         Concierto concierto;
+        List<Concierto> conciertos;
         private ConciertoActivity actividad = new ConciertoActivity();
 
         public TareaAsincrona8(ConciertoActivity activity){
@@ -177,9 +179,13 @@ public class ConciertoActivity extends Activity  implements View.OnClickListener
 
         @Override
         protected Void doInBackground(Void... voids) {
+
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-            Concierto concierto=restTemplate.getForObject("http://192.168.42.140:8082/conciertos_nombre?nombre="+ "acdc", Concierto.class);
+            Concierto[] conciertoArray=restTemplate.getForObject("http://192.168.42.221:8082/conciertos_nombre?nombre="+"acdc" , Concierto[].class);
+
+            conciertos = Arrays.asList(conciertoArray);
+            concierto = conciertos.get(0);
 
             return null;
         }
@@ -206,8 +212,8 @@ public class ConciertoActivity extends Activity  implements View.OnClickListener
                lbSemana.setText(semana);
                lbDia.setText("dia: "+anio+"-"+mes+"-"+dia);
                lbHora.setText(concierto.getHora_inicio());
-               lbPersonas.setText(concierto.getPersonas());
-               lbPrecio.setText(concierto.getPrecio());
+               lbPersonas.setText(Integer.toString(concierto.getPersonas()));
+               lbPrecio.setText(Float.toString(concierto.getPrecio()));
 
         }else{
             Toast toast1 = Toast.makeText(getApplicationContext(), "error, dato incorrecto",

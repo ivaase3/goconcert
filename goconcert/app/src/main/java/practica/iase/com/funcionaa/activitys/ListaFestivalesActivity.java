@@ -108,7 +108,7 @@ public class ListaFestivalesActivity extends Activity implements View.OnClickLis
         protected Void doInBackground(Void... voids) {
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-            Festival[] arrayFestivales=restTemplate.getForObject("http://192.168.42.140:8082"
+            Festival[] arrayFestivales=restTemplate.getForObject("http://192.168.42.221:8082"
                     + "/festivales", Festival[].class);
             festivales = Arrays.asList(arrayFestivales);
             return null;

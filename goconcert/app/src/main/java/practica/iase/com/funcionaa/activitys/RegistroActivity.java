@@ -45,9 +45,6 @@ public class RegistroActivity extends Activity implements View.OnClickListener {
         if(v.getId() == R.id.btCrear) {
 
             if(!(etContrasena.getText().equals("")) && etContrasena.getText().toString().equals(etCContrasena.getText().toString())) {
-                Toast toast32 = Toast.makeText(getApplicationContext(), "blabla",
-                        Toast.LENGTH_SHORT);
-                toast32.show();
                 TareaAsincrona6 tareaAsincrona = new TareaAsincrona6(this);
                 tareaAsincrona.execute();
             }
@@ -86,7 +83,7 @@ public class RegistroActivity extends Activity implements View.OnClickListener {
 
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-            restTemplate.getForObject("http://192.168.42.140:8082/addusuario?nombre=" +
+            restTemplate.getForObject("http://192.168.42.221:8082/addusuario?nombre=" +
                     etUsuario.getText().toString() + "&contrasena="
                     + etContrasena.getText().toString(), Void.class);
             return null;

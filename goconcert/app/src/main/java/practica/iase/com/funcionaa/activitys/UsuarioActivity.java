@@ -85,7 +85,7 @@ public class UsuarioActivity extends Activity implements View.OnClickListener{
 
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-            restTemplate.getForObject("http://192.168.42.140:8082/addusuarioo?nombre=" +
+            restTemplate.getForObject("http://192.168.42.221:8082/addusuarioo?nombre=" +
                     etUsuario.getText().toString() + "&contrasena="
                     + etContrasena.getText().toString() + "&ciudad="
                     +  etCiudad.getText().toString()+"&pais"

@@ -30,7 +30,7 @@ import practica.iase.com.funcionaa.R;
 public class MainActivity extends Activity implements View.OnClickListener{
 
 
-    private final String URL_SERVIDOR = "http://192.168.42.140:8082";
+    private final String URL_SERVIDOR = "http://192.168.42.221:8082";
     TextView etUsuario;
     TextView etContrasena;
         public static Usuario usuario = new Usuario();
@@ -140,7 +140,7 @@ public void terminado(Usuario usuario){
         protected Void doInBackground(Void... voids) {
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-            usuario =restTemplate.getForObject("http://192.168.42.140:8082" + "/usuario_nombre?nombre="+ etUsuario.getText().toString()
+            usuario =restTemplate.getForObject("http://192.168.42.221:8082" + "/usuario_nombre?nombre="+ etUsuario.getText().toString()
                     , Usuario.class);
 
             return null;

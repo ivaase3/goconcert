@@ -147,13 +147,13 @@ public class BuscarActivity extends Activity implements View.OnClickListener{
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
             if(!tipo){
-                Concierto[] arrayConciertos =restTemplate.getForObject("http://192.168.42.140:8082"
+                Concierto[] arrayConciertos =restTemplate.getForObject("http://192.168.42.221:8082"
                                 + "/conciertos_nombre?nombre="+ etBusqueda.getText().toString()
                         , Concierto[].class);
                 conciertos = Arrays.asList(arrayConciertos);
 
             }else{
-                Concierto[] arrayConciertos =restTemplate.getForObject("http://192.168.42.140:8082"
+                Concierto[] arrayConciertos =restTemplate.getForObject("http://192.168.42.221:8082"
                                 + "/conciertos_fecha?fechac="+ etBusqueda.getText().toString()
                         , Concierto[].class);
                 conciertos = Arrays.asList(arrayConciertos);
